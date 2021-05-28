@@ -1,0 +1,7 @@
+
+#Cria a variável de ambiente  sendo que '_' na frente passa o parâmeto de privado
+steps:
+    - name: gcr.io/cloud-builders/docker
+    args:['build', '--biuld-arg', 'BASIC_AUTH_USERNAME_ARG=${_BASIC_AUTH_USERNAME_ARG}','BASIC_AUTH_PASSWORD_ARG=${_BASIC_AUTH_PASSWORD_ARG}', '-t', '$_IMAGE_TAG', '.'] 
+images:
+    - $_IMAGE_TAG
